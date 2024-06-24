@@ -1,5 +1,7 @@
 const url1 = "https://bible-api.com/"
 
+
+const myform = document.getElementById("myform")
 const submit = document.getElementById("submit")
 
 submit.addEventListener("click", (event) => {
@@ -19,4 +21,7 @@ submit.addEventListener("click", (event) => {
             document.getElementById("output").innerHTML =` <b>Verse</b> : ${data.text}  <b>${book} ${chapter}:${verse} </b>`
         })
         .catch(err => console.log(err))
+        .finally(() =>{
+            myform.reset()
+        })
 })
